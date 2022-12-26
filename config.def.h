@@ -12,7 +12,7 @@ static const char col_gray1[]       = "#1e1e2e";
 static const char col_gray2[]       = "#444444";
 static const char col_gray3[]       = "#eff1f5";
 static const char col_gray4[]       = "#ffffff";
-static const char col_cyan[]        = "#B2E5FF";
+static const char col_cyan[]        = "#252525";
 static const char *colors[][3]      = {
 	/*               fg         bg         border   */
 	[SchemeNorm] = { col_gray3, col_gray1, col_gray2 },
@@ -21,7 +21,7 @@ static const char *colors[][3]      = {
 
 /* tagging */
 static const char *tags[] = { "1", "2", "3", "4", "5", "6", "7", "8", "9" };
-static const char *defaulttagapps[] = { "kitty", "google-chrome-stable", "pcmanfm", "Mailspring", "DBeaver", "gnome-control-center", NULL, NULL, NULL };
+static const char *defaulttagapps[] = { "kitty", "brave-browser", "pcmanfm", "Mailspring", "DBeaver", "gnome-control-center", NULL, NULL, NULL };
 
 static const Rule rules[] = {
 	/* xprop(1):
