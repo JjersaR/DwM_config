@@ -67,11 +67,11 @@ static const char *termcmd[]  = { "kitty", NULL };
 
 static const Key keys[] = {
 	/* modifier                     key        function        argument */
-	{ Mod1Mask,                     XK_d,      spawn,          SHCMD("rofi -show drun") }, /* rofi */
+	{ Mod1Mask,                     XK_d,        spawn,          SHCMD("rofi -show drun") }, /* rofi */
 	{ MODKEY,                       XK_Return,   spawn,          {.v = termcmd } }, /* kitty */
-	{ Mod1Mask|ShiftMask,           XK_s,        spawn,   SHCMD("transset-df -a --dec .1") },
-	{ Mod1Mask|ShiftMask,           XK_d,        spawn,   SHCMD("transset-df -a --inc .5") },
-	{ Mod1Mask|ShiftMask,           XK_f,        spawn,   SHCMD("transset-df -a .75") },
+	{ MODKEY|ControlMask|ShiftMask, XK_d,        spawn,   SHCMD("transset-df -a --dec .1") },
+	{ MODKEY|ControlMask|ShiftMask, XK_i,        spawn,   SHCMD("transset-df -a --inc .5") },
+	{ MODKEY|ControlMask|ShiftMask, XK_f,        spawn,   SHCMD("transset-df -a .75") },
 	{ MODKEY,                       XK_b,      togglebar,      {0} },
 	{ MODKEY,                       XK_j,      focusstack,     {.i = +1 } },
 	{ MODKEY,                       XK_k,      focusstack,     {.i = -1 } },
