@@ -8,7 +8,7 @@ static const int showbar            = 1;        /* 0 means no bar */
 static const int topbar             = 1;        /* 0 means bottom bar */
 static const double defaultopacity  = 0.75;
 static const char *fonts[]          = { "JetBrainsMono Nerd Font:size=10" };
-static const char dmenufont[]       = "monospace:size=10";
+static const char dmenufont[]       = "JetBrainsMono Nerd Font:size=10";
 static const char col_gray1[]       = "#1e1e2e";
 static const char col_gray2[]       = "#252525";
 static const char col_gray3[]       = "#eff1f5";
@@ -63,14 +63,15 @@ static const char *dmenucmd[] = { "dmenu_run", "-m", dmenumon, "-fn", dmenufont,
 static const char *termcmd[]  = { "kitty", NULL };
 
 #include "movestack.c"
+#include "exitdwm.c"
 
 static const Key keys[] = {
 	/* modifier                     key        function        argument */
-	{ Mod1Mask,                       XK_d,      spawn,          SHCMD("rofi -show drun") }, /* rofi */
+	{ Mod1Mask,                     XK_d,      spawn,          SHCMD("rofi -show drun") }, /* rofi */
 	{ MODKEY,                       XK_Return,   spawn,          {.v = termcmd } }, /* kitty */
-	{ MODKEY|ShiftMask,             XK_s,        spawn,   SHCMD("transset-df -a --dec .1") },
-	{ MODKEY|ShiftMask,             XK_d,        spawn,   SHCMD("transset-df -a --inc .1") },
-	{ MODKEY|ShiftMask,             XK_f,        spawn,   SHCMD("transset-df -a .75") },
+	{ Mod1Mask|ShiftMask,           XK_s,        spawn,   SHCMD("transset-df -a --dec .1") },
+	{ Mod1Mask|ShiftMask,           XK_d,        spawn,   SHCMD("transset-df -a --inc .5") },
+	{ Mod1Mask|ShiftMask,           XK_f,        spawn,   SHCMD("transset-df -a .75") },
 	{ MODKEY,                       XK_b,      togglebar,      {0} },
 	{ MODKEY,                       XK_j,      focusstack,     {.i = +1 } },
 	{ MODKEY,                       XK_k,      focusstack,     {.i = -1 } },
@@ -107,7 +108,7 @@ static const Key keys[] = {
 	TAGKEYS(                        XK_7,                      6)
 	TAGKEYS(                        XK_8,                      7)
 	TAGKEYS(                        XK_9,                      8)
-	{ MODKEY|ShiftMask,             XK_q,      quit,           {0} },
+  { MODKEY|ShiftMask,             XK_e,      exitdwm,       {0} },
   { MODKEY|ControlMask|ShiftMask, XK_q,      quit,           {1} },
 };
 
