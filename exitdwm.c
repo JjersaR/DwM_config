@@ -40,7 +40,7 @@ void exitdwm() {
     }
 
     if (strcmp(exit_action, S_LOCK) == 0) {
-        system("slock & sleep .5; xset dpms force off");
+        system("slock");
     } else if (strcmp(exit_action, S_RESTART_DWM) == 0) {
         system("pkill dwm");
         // Optionally, you can use `exec` to restart dwm immediately
