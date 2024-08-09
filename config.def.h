@@ -1,4 +1,5 @@
 /* See LICENSE file for copyright and license details. */
+#define SESSION_FILE "/tmp/dwm-session"
 
 /* appearance */
 static const unsigned int borderpx  = 1;        /* border pixel of windows */
@@ -69,8 +70,8 @@ static const Key keys[] = {
 	/* modifier                     key        function        argument */
 	{ Mod1Mask,                     XK_d,        spawn,          SHCMD("rofi -show drun") }, /* rofi */
 	{ MODKEY,                       XK_Return,   spawn,          {.v = termcmd } }, /* kitty */
-	{ MODKEY|ControlMask|ShiftMask, XK_d,        spawn,   SHCMD("transset-df -a --dec .1") },
-	{ MODKEY|ControlMask|ShiftMask, XK_i,        spawn,   SHCMD("transset-df -a --inc .5") },
+	{ MODKEY|ControlMask|ShiftMask, XK_d,        spawn,   SHCMD("transset-df -a --dec .8") },
+	{ MODKEY|ControlMask|ShiftMask, XK_i,        spawn,   SHCMD("transset-df -a --inc .8") },
 	{ MODKEY|ControlMask|ShiftMask, XK_f,        spawn,   SHCMD("transset-df -a .75") },
 	{ MODKEY,                       XK_b,      togglebar,      {0} },
 	{ MODKEY,                       XK_j,      focusstack,     {.i = +1 } },
