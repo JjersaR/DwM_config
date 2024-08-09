@@ -7,7 +7,6 @@ static const unsigned int gappx     = 10;       /* gap pixel between windows */
 static const unsigned int snap      = 32;       /* snap pixel */
 static const int showbar            = 1;        /* 0 means no bar */
 static const int topbar             = 1;        /* 0 means bottom bar */
-static const double defaultopacity  = 0.75;
 static const char *fonts[]          = { "JetBrainsMono Nerd Font:size=10" };
 static const char dmenufont[]       = "JetBrainsMono Nerd Font:size=10";
 static const char col_gray1[]       = "#1e1e2e";
@@ -70,9 +69,6 @@ static const Key keys[] = {
 	/* modifier                     key        function        argument */
 	{ Mod1Mask,                     XK_d,        spawn,          SHCMD("rofi -show drun") }, /* rofi */
 	{ MODKEY,                       XK_Return,   spawn,          {.v = termcmd } }, /* kitty */
-	{ MODKEY|ControlMask|ShiftMask, XK_d,        spawn,   SHCMD("transset-df -a --dec .8") },
-	{ MODKEY|ControlMask|ShiftMask, XK_i,        spawn,   SHCMD("transset-df -a --inc .8") },
-	{ MODKEY|ControlMask|ShiftMask, XK_f,        spawn,   SHCMD("transset-df -a .75") },
 	{ MODKEY,                       XK_b,      togglebar,      {0} },
 	{ MODKEY,                       XK_j,      focusstack,     {.i = +1 } },
 	{ MODKEY,                       XK_k,      focusstack,     {.i = -1 } },
